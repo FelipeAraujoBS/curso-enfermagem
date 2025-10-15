@@ -1,4 +1,10 @@
-export default function CourseCard({ title, description, topics, icon }) {
+export default function CourseCard({
+  title,
+  description,
+  topics,
+  icon,
+  onMoreInfo,
+}) {
   return (
     <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
       <div className="text-4xl mb-4">{icon}</div>
@@ -17,6 +23,12 @@ export default function CourseCard({ title, description, topics, icon }) {
         className="block w-full bg-blue-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
       >
         Inscreva-se
+      </a>
+      <a
+        onClick={onMoreInfo}
+        className="block mt-3 w-full bg-blue-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-blue-700 cursor-pointer transition"
+      >
+        Mais sobre o curso
       </a>
     </div>
   );

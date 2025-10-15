@@ -1,4 +1,27 @@
+"use client";
+
+import { useState } from "react";
+
 export default function Contact() {
+  const [nome, setNome] = useState("");
+  const [email, setEmail] = useState("");
+  const [telefone, setTelefone] = useState("");
+  const [curso, setCurso] = useState("");
+  const [mensagem, setMensagem] = useState("");
+
+  const formData = (e) => {
+    e.preventDefault();
+    const datas = {
+      nome,
+      email,
+      telefone,
+      curso,
+      mensagem,
+    };
+
+    console.log(datas);
+  };
+
   return (
     <section id="contato" className="py-20 bg-white">
       <div className="container mx-auto px-6">
@@ -17,7 +40,7 @@ export default function Contact() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Formulário */}
             <div className="bg-gray-50 rounded-lg p-8">
-              <form className="space-y-6">
+              <form onSubmit={formData} className="space-y-6">
                 <div>
                   <label
                     htmlFor="nome"
@@ -29,8 +52,11 @@ export default function Contact() {
                     type="text"
                     id="nome"
                     name="nome"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full text-gray-600 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="Seu nome"
+                    onChange={(e) => {
+                      setNome(e.target.value);
+                    }}
                     required
                   />
                 </div>
@@ -46,7 +72,10 @@ export default function Contact() {
                     type="email"
                     id="email"
                     name="email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full text-gray-600 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                    }}
                     placeholder="seu@email.com"
                     required
                   />
@@ -63,7 +92,10 @@ export default function Contact() {
                     type="tel"
                     id="telefone"
                     name="telefone"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full text-gray-600 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    onChange={(e) => {
+                      setTelefone(e.target.value);
+                    }}
                     placeholder="(71) 99999-9999"
                     required
                   />
@@ -79,7 +111,10 @@ export default function Contact() {
                   <select
                     id="curso"
                     name="curso"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full text-black px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    onChange={(e) => {
+                      setCurso(e.target.value);
+                    }}
                     required
                   >
                     <option value="">Selecione um curso</option>
@@ -105,7 +140,10 @@ export default function Contact() {
                     id="mensagem"
                     name="mensagem"
                     rows="4"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full text-gray-600 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    onChange={(e) => {
+                      setMensagem(e.target.value);
+                    }}
                     placeholder="Sua mensagem..."
                   ></textarea>
                 </div>

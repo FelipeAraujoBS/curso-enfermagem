@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
+import zap from "./imgs/zap.png";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -50,6 +52,16 @@ export default function Header() {
             className="hidden md:block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition font-semibold"
           >
             Inscreva-se
+          </a>
+
+          {/* Botão Whatsapp Desktop*/}
+          <a
+            href="https://wa.me/5571992390048?text=Olá%20quero%20mais%20informações"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="fixed bottom-8 right-8 rounded-full text-2xl opacity-75 hover:opacity-100 hover:scale-125 transition"
+          >
+            <Image src={zap} alt="💬" width={75} height={75} priority />
           </a>
 
           {/* Botão Hambúrguer Mobile */}

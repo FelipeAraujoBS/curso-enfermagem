@@ -1,6 +1,22 @@
+"use client";
+
+import { useState } from "react";
 import CourseCard from "./CourseCard";
+import Modal from "./Modal";
 
 export default function Courses() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedCourse, setSelectedCourse] = useState(0);
+
+  const openModal = (index) => {
+    setSelectedCourse(index);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
   const courses = [
     {
       title: "Punção Venosa e Coleta",
@@ -65,10 +81,19 @@ export default function Courses() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {courses.map((course, index) => (
-            <CourseCard key={index} {...course} />
+            <CourseCard
+              key={index}
+              {...course}
+              onMoreInfo={() => openModal(index)}
+            />
           ))}
         </div>
       </div>
+      <Modal
+        isOpen={modalOpen}
+        onClose={closeModal}
+        courseData={courses[selectedCourse] || courses[0]}
+      />
     </section>
   );
 }
