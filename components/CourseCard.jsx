@@ -13,7 +13,7 @@ export default function CourseCard({
       <ul className="space-y-2 mb-6">
         {topics.map((topic, index) => (
           <li key={index} className="text-sm text-gray-700 flex items-start">
-            <span className="text-blue-600 mr-2">✓</span>
+            {topic !== "" && <span className="text-blue-600 mr-2">✓</span>}
             {topic}
           </li>
         ))}

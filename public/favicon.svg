@@ -1,0 +1,11 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fundo circular azul -->
+  <circle cx="32" cy="32" r="32" fill="#2563EB"/>
+  
+  <!-- Cruz branca (símbolo de saúde) -->
+  <rect x="26" y="16" width="12" height="32" rx="2" fill="white"/>
+  <rect x="16" y="26" width="32" height="12" rx="2" fill="white"/>
+  
+  <!-- Detalhe vermelho no centro -->
+  <circle cx="32" cy="32" r="6" fill="#EF4444"/>
+</svg>

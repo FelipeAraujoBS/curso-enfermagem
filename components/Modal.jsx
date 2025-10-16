@@ -78,8 +78,10 @@ export default function Modal({ isOpen, onClose, courseData }) {
                 claude
                 {courseData.topics.map((topic, index) => (
                   <li key={index} className="flex items-start text-gray-700">
-                    <span className="text-blue-600 mr-3 mt-1 font-bold">✓</span>
-                    <span className="text-lg">{topic}</span>
+                    {topic !== "" && (
+                      <span className="text-blue-600 mr-2">✓</span>
+                    )}
+                    {topic}
                   </li>
                 ))}
               </ul>
@@ -222,9 +224,11 @@ export default function Modal({ isOpen, onClose, courseData }) {
                 <ul className="space-y-3">
                   {courseData.topics.map((topic, index) => (
                     <li key={index} className="flex items-start text-gray-700">
-                      <span className="text-blue-600 mr-3 mt-1 font-bold">
-                        ✓
-                      </span>
+                      {topic !== "" && (
+                        <span className="text-blue-600 mr-3 mt-1 font-bold">
+                          ✓
+                        </span>
+                      )}
                       <span className="text-lg">{topic}</span>
                     </li>
                   ))}

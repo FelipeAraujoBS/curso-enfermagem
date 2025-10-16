@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Hero() {
   return (
     <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white">
@@ -11,18 +13,18 @@ export default function Hero() {
             para o mercado de trabalho com confiança.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <a
+            <Link
               href="#cursos"
               className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition text-center"
             >
               Ver Cursos
-            </a>
-            <a
-              href="#contato"
+            </Link>
+            <Link
+              href="/contato"
               className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition text-center"
             >
               Fale Conosco
-            </a>
+            </Link>
           </div>
         </div>
       </div>

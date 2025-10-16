@@ -27,6 +27,10 @@ export default function Courses() {
         "Coleta a vácuo",
         "Biossegurança",
         "Práticas em laboratório",
+        "",
+        "",
+        "",
+        "",
       ],
     },
     {
@@ -39,6 +43,10 @@ export default function Courses() {
         "Tipos de coberturas",
         "Avaliação de feridas",
         "Técnicas assépticas",
+        "",
+        "",
+        "",
+        "",
       ],
     },
     {
@@ -67,7 +75,7 @@ export default function Courses() {
   ];
 
   return (
-    <section id="cursos" className="py-20 bg-gray-50">
+    <section id="cursos" className="py-20">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">
