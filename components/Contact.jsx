@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import axios from "axios";
 
 export default function Contact() {
   const [nome, setNome] = useState("");
@@ -8,9 +9,13 @@ export default function Contact() {
   const [telefone, setTelefone] = useState("");
   const [curso, setCurso] = useState("");
   const [mensagem, setMensagem] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(null);
 
-  const formData = (e) => {
+  const formData = async (e) => {
     e.preventDefault();
+
     const datas = {
       nome,
       email,
@@ -19,7 +24,27 @@ export default function Contact() {
       mensagem,
     };
 
-    console.log(datas);
+    setLoading(true);
+    setError(null);
+    setSuccess(false);
+
+    try {
+      await axios.post("/userContact", datas);
+
+      setSuccess(true);
+
+      setNome("");
+      setEmail("");
+      setTelefone("");
+      setCurso("");
+      setMensagem("");
+
+      setTimeout(() => setSuccess(false), 3000);
+    } catch (error) {
+      setError(error.mensagem || "Erro ao enviar o formulário!");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -152,9 +177,21 @@ export default function Contact() {
                   type="submit"
                   className="w-full bg-blue-600 text-white py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition"
                 >
-                  Enviar Mensagem
+                  {(loading && "Enviando...") || "Enviar Mesangem"}
                 </button>
               </form>
+
+              {success && (
+                <div className="mt-2 ml-6 p-4 bg-green-100 text-green-700 rounded-lg w-80">
+                  ✓ Mensagem enviada com sucesso!
+                </div>
+              )}
+
+              {error && (
+                <div className="mt-2 ml-6 p-4 bg-red-100 text-red-700 rounded-lg">
+                  x {error}
+                </div>
+              )}
             </div>
 
             {/* Informações de Contato */}

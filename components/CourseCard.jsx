@@ -6,7 +6,10 @@ export default function CourseCard({
   onMoreInfo,
 }) {
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
+    <div
+      data-aos="fade-up"
+      className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition"
+    >
       <div className="text-4xl mb-4">{icon}</div>
       <h3 className="text-2xl font-bold text-gray-800 mb-3">{title}</h3>
       <p className="text-gray-600 mb-4">{description}</p>

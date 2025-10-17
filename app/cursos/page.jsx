@@ -1,4 +1,5 @@
 import Courses from "@/components/Courses";
+import UpcomingClasses from "@/components/UpcomingClasses";
 
 export const metadata = {
   title: "Nossos Cursos | Cursos de Enfermagem",
@@ -20,8 +21,7 @@ export default function CursosPage() {
       </section>
 
       <Courses />
-
-      {/* Vamos adicionar Próximas Turmas aqui depois */}
+      <UpcomingClasses />
     </main>
   );
 }

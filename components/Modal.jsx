@@ -2,6 +2,8 @@
 
 import { useEffect } from "react";
 
+import Link from "next/link";
+
 export default function Modal({ isOpen, onClose, courseData }) {
   useEffect(() => {
     if (isOpen) {
@@ -326,16 +328,16 @@ export default function Modal({ isOpen, onClose, courseData }) {
 
               {/* Botões */}
               <div className="flex justify-end gap-3">
-                <a
+                <Link
                   onClick={onClose}
-                  href="#contato"
-                  className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold transition text-center"
+                  href="/contato"
+                  className="cursor-pointer px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold transition text-center"
                 >
                   Inscreva-se
-                </a>
+                </Link>
                 <button
                   onClick={onClose}
-                  className="px-6 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 font-semibold transition"
+                  className="cursor-pointer px-6 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 font-semibold transition"
                 >
                   Fechar
                 </button>

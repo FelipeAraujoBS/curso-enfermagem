@@ -4,6 +4,8 @@ import Hero from "@/components/Hero";
 import Courses from "@/components/Courses";
 import dynamic from "next/dynamic";
 
+import Link from "next/link";
+
 const Testimonials = dynamic(() => import("@/components/Testimonials"), {
   ssr: false,
   loading: () => <div className="py-20 text-center">Carregando...</div>,
@@ -28,18 +30,12 @@ export default function Home() {
             Inscreva-se agora e faça parte da próxima turma. Vagas limitadas!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
+            <Link
               href="/cursos"
               className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition"
             >
               Ver Todos os Cursos
-            </a>
-            <a
-              href="/contato"
-              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition"
-            >
-              Fale Conosco
-            </a>
+            </Link>
           </div>
         </div>
       </section>

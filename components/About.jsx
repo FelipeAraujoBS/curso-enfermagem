@@ -4,14 +4,14 @@ export default function About() {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Imagem */}
-          <div className="order-2 md:order-1">
+          <div className="order-2 md:order-1" data-aos="fade-right">
             <div className="bg-gray-200 rounded-lg h-96 flex items-center justify-center">
               <p className="text-gray-500">Foto da Instrutora</p>
             </div>
           </div>
 
           {/* Conteúdo */}
-          <div className="order-1 md:order-2">
+          <div className="order-1 md:order-2" data-aos="fade-left">
             <h2 className="text-4xl font-bold text-gray-800 mb-6">
               Sobre a Instrutora
             </h2>
